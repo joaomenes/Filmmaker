@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmmaker</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    {% load django_browser_reload %}
+
+    <header>
+        <h1 class="title">
+            Filmmaker
+            <img src="{% static 'assets/pipocaLogo.png' %}" alt="balde de pipoca">
+        </h1>
+        <div class="connect">
+            <span class="login">Entrar</span>
+            <span class="register">Cadastre-se</span>
+        </div>
+    </header>
+
+    <section class="rectangle_intro_text"> 
+        <p class="introductoryText">
+            Com o Filmmaker, encontrar o que assistir nunca foi tão fácil! Receba recomendações personalizadas
+            de filmes e séries sem perder horas navegando pelos catálogos. Além disso, marque os títulos que já 
+            assistiu e avalie suas experiências para tornar suas escolhas ainda melhores!
+        </p>
+    </section>
+
+    <section class="container">
+        <div class="genres">
+            <div class="title_genres">
+                <h2>Gêneros</h2>
+            </div>
+            <div class="genres-list">
+                <button>Ação</button>
+                <button>Aventura</button>
+                <button>Comédia</button>
+                <button>Drama</button>
+                <button>Terror</button>
+                <button>Suspense</button>
+                <button>Sci-Fi</button>
+                <button>Fantasia</button>
+                <button>Romance</button>
+                <button>Musical</button>
+            </div>
+
+            <div class="gender-specific">
+                <h3>Gêneros Específicos e Mistos +</h3>
+            </div> 
+        </div>
+
+        <div class="vertical-line"></div>  
+
+        <div class="specifications">
+            <div class="title_specifications">
+                <p>Especificações</p>
+            </div>
+            <div class="release_year">
+                <p class="tittle_release">Ano de lançamento</p>
+                <hr class="line">
+            </div>
+            <div class="release_year_select">
+                <div class="release_year_initial_select" >
+                    <select class="year_initial">
+                        <option value="#" disabled selected>De</option>
+                    </select>
+                    <img class="indication_arrow" src="{% static 'assets/icons8-flecha-50.png' %}" alt="balde de pipoca">
+                    <select class="year_end">
+                        <option value="#" disabled selected>Até</option>
+                    </select>
+                </div>
+            </div>
+            <div class="language_select">
+                <div class="language_selecting">
+                    <p class="language_movie">Idioma</p>
+                    <hr class="line">
+                </div>
+                <div class="language_select_movie" >
+                    <select class="movie_language_selecting">
+                        <option value="#" disabled selected>Qualquer</option>
+                    </select>
+                </div>
+            </div>
+            <div class="film_duration_select">
+                <div class="duration_selecting">
+                    <p class="duration_movie">Duração</p>
+                    <hr class="line">
+                </div>
+                <div class="duration_select_movie" >
+                    <select class="duration_language_selecting">
+                        <option value="#" disabled selected>Qualquer</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="select_films_or_series">
+            <div class="background_films_or_series">
+                <div class="films_or_series">
+                    <button>Filmes</button>
+                    <button>Séries</button>
+                </div>  
+            </div>  
+
+            <div class="reviews_duration_select">
+                <div class="reviews_selecting">
+                    <p class="reviews_movie">Avaliações</p>
+                    <hr class="line">
+                </div>
+                <div class="reviews_select_movie" >
+                    <select class="reviews_language_selecting">
+                        <option value="#" disabled selected>Qualquer</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="age_range_select">
+                <div class="age_range_selecting">
+                    <p class="age_range_movie">Faixa etária</p>
+                    <hr class="line">
+                </div>
+                <div class="age_range_select_movie" >
+                    <select class="reviews_language_selecting">
+                        <option value="#" disabled selected>Qualquer</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <div class="movie_search"> 
+        <p class="searching_movies">Buscar por um filme ou série</p>
+        <hr class="line">
+        <input type="text" class="movie_search_engine_by_typing" placeholder="Digite o título">
+        <div><button>Buscar</button></div>
+    </div>
+
+    {% django_browser_reload_script %}
+</body>
+</html>

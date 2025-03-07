@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #a52a2a;
+    --secondary-color: #669BBC;
+    --background-color: #E8F0F8;
+    --button-color: #007ACC;
+    --text-color: white;
+    --border-color-hover-genres: black;
+    --font-color-hover: black;
+    --hover-button-genres: #E0E1DD;
+    --genre-button-hover-pressed: #003049;
+    --genre-button-font-pressed: white;
+    --vertical-line-color: #780000;
+    --button-connect-color: #FFFFFF;
+    --butto-color-search: #004080;
+    --font-primary: "Montserrat", serif;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+header {
+    padding: 1vh;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+header h1 {
+    display: flex;
+    margin-left: 2vh;
+    font-size: 45px;
+    font-weight: 700;
+    font-family: "Oswald", serif;
+    color: #FFC73A;
+    text-shadow: 
+        2px 2px 0px black,  
+        -2px -2px 0px black, 
+        2px -2px 0px black,  
+        -2px 2px 0px black;
+}
+
+header img {
+    width: 60px;
+    margin-left: 0%;
+}
+
+.connect, .films_or_series {
+    display: flex; 
+    gap: 20px; 
+}
+
+.login, .register {
+    width: 100px;
+    height: 30px;
+    background-color: var(--button-connect-color);
+    border-radius: 10px;
+    margin-top: 15px;
+    text-align: center;
+    font-family: var(--font-primary);
+    font-size: 22px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.login:hover, .register:hover {
+    background-color: var(--hover-button-genres);
+}
+
+.register {
+    width: 140px;
+}
+
+.rectangle_intro_text {
+    width: 900px;
+    height: 80px;
+    background-color: var(--secondary-color);
+    margin: auto;
+    border-radius: 10px;
+    margin-top: 2vh;
+}
+
+.introductoryText {
+    text-align: center;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 1vh;
+}
+
+.genres, .specifications {
+    margin-top: 20px;
+}
+
+.title_genres {
+    width: 190px;
+    height: 25px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    margin-left: 15px;
+}
+
+.genres h2 {
+    text-align: center; 
+    font-family: var(--font-primary);
+    font-size: 20px;
+}
+
+.genres-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.genres-list button {
+    background-color: var(--button-color);
+    color: var(--background-color);
+    width: 110px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    font-family: var(--font-primary);
+    justify-content: center;
+    font-size: 18px;
+}
+
+.genres-list button:hover, .films_or_series button:hover {
+    background-color: var(--hover-button-genres);
+    color: var(--font-color-hover);
+    border: 2px solid var(--border-color-hover-genres);
+}
+
+.genres-list button:active, .films_or_series button:active {
+    background-color: var(--genre-button-hover-pressed);
+    color: var(--genre-button-font-pressed);
+    border: 2px solid var(--border-color-hover-genres);
+}
+
+.gender-specific {
+    width: 265px;
+    height: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    margin-left: 15px;
+    text-align: center;
+    font-family: var(--font-primary);
+    font-size: 12px;
+    margin-top: 10px;
+    margin-left: -15px;
+}
+
+.container {
+    display: grid; 
+    grid-template-columns: 280px 1px 400px 450px;
+    align-items: start; 
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+.vertical-line {
+    height: 380px; 
+    width: 1px;
+    background-color: var(--vertical-line-color);
+}
+
+.conteudo-lado-direito {
+    padding: 20px;
+}
+
+.specifications {
+    margin-left: 25px;
+}
+
+.title_specifications {
+    width: 190px;
+    height: 27px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    margin-left: 25px;
+}
+
+.title_specifications p {
+    text-align: center; 
+    font-family: var(--font-primary);
+    font-size: 22px;
+}
+
+.tittle_release {
+    margin-left: 35px;
+    margin-top: 15px;
+}
+
+.language_movie, .duration_movie {
+    margin-left: 85px;
+}
+
+.age_range_movie {
+    margin-top: 20px;
+    margin-left: 75px;
+}
+
+.reviews_movie {
+    margin-top: 20px;
+    margin-left: 80px;
+}
+
+.tittle_release, .language_movie, .duration_movie, .reviews_movie, .age_range_movie, .searching_movies {
+    font-size: 20px;
+    font-family: var(--font-primary);
+}
+
+.line {
+    border: none; 
+    height: 1px; 
+    width: 210px;
+    background-color: black; 
+    margin-left: 25px;
+}
+
+.release_year_initial_select {
+    display: flex;                
+    gap: 10px;                    
+    width: 100%;                  
+}
+
+.year_initial, .year_end, .movie_language_selecting, .duration_language_selecting, .reviews_language_selecting {
+    appearance: auto; 
+    -webkit-appearance: auto; 
+    background-color: var(--button-connect-color);
+    border: 2px solid #000;
+    padding: 10px;
+    font-size: 16px;
+    flex: 1;                       
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center; 
+    font-family: var(--font-primary);
+}
+
+.movie_language_selecting, .duration_language_selecting, .reviews_language_selecting {
+    margin-left: 65px;
+}
+
+.release_year_select {
+    width: 220px;                  
+    display: flex;                
+    justify-content: flex-start;
+    margin-top: 15px;  
+    margin-left: 8px;
+}
+
+.indication_arrow {
+    width: 40px;
+    height: 45px;
+}
+
+.release_year_initial_select select {
+    font-size: 18px;
+    margin-left: 15px;
+    font-family: var(--font-primary);
+}
+
+.language_select, .film_duration_select{
+    margin-top: 20px;
+    margin-left: 3px;
+}
+
+.language_select_movie, .duration_select_movie, .reviews_select_movie, .age_range_select_movie, .release_year_select {
+    margin-top: 10px;
+}
+
+.reviews_duration_select, .age_range_select {
+    grid-column: 4;
+}
+
+.reviews_select_movie, .age_range_select_movie {
+    margin-left: 8px;
+}
+
+.background_films_or_series {
+    width: 300px;
+    height: 90px;
+    background-color: var(--secondary-color);
+    margin: auto;
+    border-radius: 10px;
+    margin-top: 2vh;
+    margin-left: 130px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    gap: 10px;
+}
+
+.films_or_series button {
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    font-family: var(--font-primary);
+}
+
+.movie_search {
+    place-items: center;
+    flex-direction: column; 
+}
+
+.searching_movies {
+    place-items: center;
+}
+
+.movie_search_engine_by_typing {
+    margin-top: 7px;
+    width: 180px;
+    height: 30px;
+    border-radius: 10px;
+    box-shadow: none;  
+    text-align: center;
+}
+
+.searching_movies .line {
+    border: none; 
+    height: 1px; 
+    width: 250px;
+    background-color: black; 
+    margin-left: 15px;
+}
+
+.movie_search button {
+    background-color: var(--butto-color-search);
+    color: var(--background-color);
+    width: 210px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    font-family: var(--font-primary);
+    justify-content: center;
+    font-size: 16px;
+}
