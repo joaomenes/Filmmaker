@@ -7,19 +7,19 @@
 }
 
 :root {
-    --primary-color: #a52a2a;
-    --secondary-color: #669BBC;
-    --background-color: #E8F0F8;
-    --button-color: #007ACC;
+    --primary-color: #6F1D1B;
+    --secondary-color: #BB9457;
+    --background-color: #FFE6A7;
+    --button-color: #432818;
     --text-color: white;
     --border-color-hover-genres: black;
     --font-color-hover: black;
-    --hover-button-genres: #E0E1DD;
-    --genre-button-hover-pressed: #003049;
+    --hover-button-genres: #99582A;
+    --genre-button-hover-pressed: #6F1D1B;
     --genre-button-font-pressed: white;
     --vertical-line-color: #780000;
     --button-connect-color: #FFFFFF;
-    --butto-color-search: #004080;
+    --butto-color-search: #432818;
     --font-primary: "Montserrat", serif;
 }
 
@@ -160,7 +160,7 @@ header img {
 
 .container {
     display: grid; 
-    grid-template-columns: 280px 1px 400px 450px;
+    grid-template-columns: 280px 1px 400px 450px 130px;
     align-items: start; 
     margin-left: 40px;
     margin-top: 40px;
@@ -318,6 +318,7 @@ header img {
 
 .searching_movies {
     place-items: center;
+    margin-top: -60px;
 }
 
 .movie_search_engine_by_typing {
@@ -348,4 +349,23 @@ header img {
     font-family: var(--font-primary);
     justify-content: center;
     font-size: 16px;
+}
+
+.popcorn_image{
+    grid-column: 5;
+}
+
+.popcorn_image img{
+    margin-left: 80px;
+    height: 80px;
+    height: 80px;
+    padding: 30px;
+}
+
+.falling_popcorn_image_1{
+    transform: rotate(26deg);
+}
+
+.falling_popcorn_image_2{
+    transform: rotate(-26deg);
 }
