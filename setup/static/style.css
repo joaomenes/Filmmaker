@@ -232,7 +232,7 @@ header img {
     width: 100%;                  
 }
 
-.year_initial, .year_end, .movie_language_selecting, .duration_language_selecting, .reviews_language_selecting {
+.year_initial, .year_end, .movie_language_selecting, .duration_language_selecting, .reviews_language_selecting, .age_selecting {
     appearance: auto; 
     -webkit-appearance: auto; 
     background-color: var(--button-connect-color);
@@ -246,7 +246,7 @@ header img {
     font-family: var(--font-primary);
 }
 
-.movie_language_selecting, .duration_language_selecting, .reviews_language_selecting {
+.movie_language_selecting, .duration_language_selecting, .reviews_language_selecting, .age_selecting {
     margin-left: 65px;
 }
 

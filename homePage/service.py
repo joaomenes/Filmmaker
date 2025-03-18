@@ -10,7 +10,7 @@ HEADERS = {
     "x-rapidapi-host": "streaming-availability.p.rapidapi.com"
 }
 
-def buscar_shows(filtros):
+def search_movies_or_series(filtros):
     """filtros da busca de  filmes e séries."""
 
     params = {
@@ -21,7 +21,7 @@ def buscar_shows(filtros):
         "year_max": filtros.get("release_to", ""),  
         "genres": filtros.get("genres", ""),  
         "language": filtros.get("language", ""),
-        "imdb_rating_min": filtros.get("vote_min", ""),  
+        "imdb_rating_min": filtros.get("vote_min", ""),  #para ser implementado. 
         "imdb_vote_count_min": "1000"  
     }
 
