@@ -46,10 +46,6 @@
                 <button>Romance</button>
                 <button>Musical</button>
             </div>
-
-            <div class="gender-specific">
-                <h3>Gêneros Específicos e Mistos +</h3>
-            </div> 
         </div>
 
         <div class="vertical-line"></div>  
@@ -66,16 +62,23 @@
                 <div class="release_year_initial_select" >
                     <select class="year_initial">
                         <option value="#" disabled selected>De</option>
+                        {% for year in year_range %}
+                            <option value="{{ year }}">{{ year }}</option>
+                        {% endfor %}
                     </select>
                     <img class="indication_arrow" src="{% static 'assets/icons8-flecha-50.png' %}" alt="seta entre os anos de lançamento">
                     <select class="year_end">
                         <option value="#" disabled selected>Até</option>
+                        {% for year in year_range %}
+                            <option value="{{ year }}">{{ year }}</option>
+                        {% endfor %}
                     </select>
+                    
                 </div>
             </div>
             <div class="language_select">
                 <div class="language_selecting">
-                    <p class="language_movie">Idioma</p>
+                    <p class="language_movie">Disponível em qual país</p>
                     <hr class="line">
                 </div>
                 <div class="language_select_movie">
@@ -189,8 +192,26 @@
                 <div class="age_range_select_movie" >
                     <select class="age_selecting">
                         <option value="#" disabled selected>Qualquer</option>
+                        <option value="#" disabled selected>Infantis</option>
+                        <option value="#" disabled selected>Para adolescentes</option>
+                        <option value="#" disabled selected>Adultos 18+</option>
                     </select>
                 </div>
+            </div>
+
+            <div class="select_streaming">
+                <label for="streaming">
+                <input type="checkbox" class="streaming" name="streaming_available">
+                <img class="img_netflix" src="{% static 'assets/streaming/icons8-netflix-480.png' %}" alt="Netflix">
+                <input type="checkbox" class="streaming" name="streaming_available">
+                <img class="img_max" src="{% static 'assets/streaming/icons8-hbo-max-480.png' %}" alt="Max">
+                <input type="checkbox" class="streaming" name="streaming_available">
+                <img class="img_disney" src="{% static 'assets/streaming/icons8-disney-480.png' %}" alt="Disney">
+                <input type="checkbox" class="streaming" name="streaming_available">
+                <img class="img_prime" src="{% static 'assets/streaming/icons8-amazon-prime-video-480.png' %}" alt="Prime video">
+                <input type="checkbox" class="streaming" name="streaming_available">
+                <img class="img_appletv" src="{% static 'assets/streaming/icons8-apple-tv-480.png' %}" alt="Apple Tv">
+                </label>
             </div>
         </div>
 

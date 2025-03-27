@@ -105,7 +105,7 @@ header img {
     height: 25px;
     background-color: var(--secondary-color);
     border-radius: 10px;
-    margin-left: 15px;
+    margin-left: 30px;
 }
 
 .genres h2 {
@@ -160,7 +160,7 @@ header img {
 
 .container {
     display: grid; 
-    grid-template-columns: 280px 1px 400px 450px 130px;
+    grid-template-columns: 280px 1px 400px 500px 80px;
     align-items: start; 
     margin-left: 40px;
     margin-top: 40px;
@@ -170,6 +170,7 @@ header img {
     height: 380px; 
     width: 1px;
     background-color: var(--vertical-line-color);
+    margin-left: 35px;
 }
 
 .conteudo-lado-direito {
@@ -177,7 +178,7 @@ header img {
 }
 
 .specifications {
-    margin-left: 25px;
+    margin-left: 75px;
 }
 
 .title_specifications {
@@ -185,7 +186,7 @@ header img {
     height: 27px;
     background-color: var(--secondary-color);
     border-radius: 10px;
-    margin-left: 25px;
+    margin-left: 38px;
 }
 
 .title_specifications p {
@@ -199,8 +200,12 @@ header img {
     margin-top: 15px;
 }
 
-.language_movie, .duration_movie {
+.duration_movie {
     margin-left: 85px;
+}
+
+.language_movie{
+    margin-left: 15px;
 }
 
 .age_range_movie {
@@ -246,21 +251,25 @@ header img {
     font-family: var(--font-primary);
 }
 
-.movie_language_selecting, .duration_language_selecting, .reviews_language_selecting, .age_selecting {
-    margin-left: 65px;
+.movie_language_selecting, .duration_language_selecting{
+    margin-left: 28px;
+}
+
+.reviews_language_selecting, .age_selecting {
+    margin-left: 67px;
 }
 
 .release_year_select {
-    width: 220px;                  
+    width: 200px;                  
     display: flex;                
     justify-content: flex-start;
     margin-top: 15px;  
-    margin-left: 8px;
 }
 
 .indication_arrow {
-    width: 40px;
-    height: 45px;
+    width: 45px;
+    height: 50px;
+    margin-left: 15px;
 }
 
 .release_year_initial_select select {
@@ -280,6 +289,7 @@ header img {
 
 .reviews_duration_select, .age_range_select {
     grid-column: 4;
+    margin-left: 65px;
 }
 
 .reviews_select_movie, .age_range_select_movie {
@@ -293,7 +303,7 @@ header img {
     margin: auto;
     border-radius: 10px;
     margin-top: 2vh;
-    margin-left: 130px;
+    margin-left: 190px;
     display: flex; 
     justify-content: center; 
     align-items: center;
@@ -318,7 +328,7 @@ header img {
 
 .searching_movies {
     place-items: center;
-    margin-top: -60px;
+    margin-top: -30px;
 }
 
 .movie_search_engine_by_typing {
@@ -338,6 +348,17 @@ header img {
     margin-left: 15px;
 }
 
+.select_streaming{
+    margin-top: 10px;
+}
+
+.select_streaming img{
+    width: 70px;
+    height: 70px;
+}
+
+
+
 .movie_search button {
     background-color: var(--butto-color-search);
     color: var(--background-color);
@@ -356,7 +377,7 @@ header img {
 }
 
 .popcorn_image img{
-    margin-left: 80px;
+    margin-left: 40px;
     height: 80px;
     height: 80px;
     padding: 30px;
