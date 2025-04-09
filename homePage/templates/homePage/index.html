@@ -61,14 +61,14 @@
             <div class="release_year_select">
                 <div class="release_year_initial_select" >
                     <select class="year_initial">
-                        <option value="#" disabled selected>De</option>
+                        <option value="" disabled selected>De</option>
                         {% for year in year_range %}
                             <option value="{{ year }}">{{ year }}</option>
                         {% endfor %}
                     </select>
                     <img class="indication_arrow" src="{% static 'assets/icons8-flecha-50.png' %}" alt="seta entre os anos de lançamento">
                     <select class="year_end">
-                        <option value="#" disabled selected>Até</option>
+                        <option value="" disabled selected>Até</option>
                         {% for year in year_range %}
                             <option value="{{ year }}">{{ year }}</option>
                         {% endfor %}
@@ -83,7 +83,7 @@
                 </div>
                 <div class="language_select_movie">
                     <select class="movie_language_selecting">
-                        <option value="#" selected>Qualquer</option>
+                        <option value="" selected>Qualquer</option>
                         <option value="za">África do Sul</option>
                         <option value="de">Alemanha</option>
                         <option value="sa">Arábia Saudita</option>
@@ -155,10 +155,10 @@
                 </div>
                 <div class="duration_select_movie"> 
                     <select class="duration_language_selecting">
-                        <option value="#" selected>Qualquer</option>
-                        <option value="100">Até 100 minutos</option>
-                        <option value="100-150">100 a 150 minutos</option>
-                        <option value="150+">Mais de 150 minutos</option>
+                        <option value="" selected>Qualquer</option>
+                        <option value="1">Até 100 minutos</option>
+                        <option value="2">100 a 150 minutos</option>
+                        <option value="3">Mais de 150 minutos</option>
                     </select>
                 </div>
             </div>
@@ -167,9 +167,9 @@
         <div class="select_films_or_series">
             <div class="background_films_or_series">
                 <div class="films_or_series">
-                    <button>Filmes</button>
-                    <button>Séries</button>
-                </div>  
+                    <button type="button" value="movie">Filmes</button> 
+                    <button type="button" value="series">Séries</button>
+                </div> 
             </div>  
 
             <div class="reviews_duration_select">
@@ -180,6 +180,12 @@
                 <div class="reviews_select_movie" >
                     <select class="reviews_language_selecting">
                         <option value="#" disabled selected>Qualquer</option>
+                        <option value="best">Mais bem avaliados</option>
+                        <option value="unpopular">Pouco conhecidos</option>
+                        <option value="unknown">Desconhecidos</option>
+                        <option value="lowrated">Mal avaliados</option>
+                        <option value="thrash">Muito ruins</option>
+                        <option value="random">Aleatórios</option>
                     </select>
                 </div>
             </div>
@@ -191,26 +197,30 @@
                 </div>
                 <div class="age_range_select_movie" >
                     <select class="age_selecting">
-                        <option value="#" disabled selected>Qualquer</option>
-                        <option value="#" disabled selected>Infantis</option>
-                        <option value="#" disabled selected>Para adolescentes</option>
-                        <option value="#" disabled selected>Adultos 18+</option>
+                        <option value="" selected>Qualquer</option>
+                        <option value="kid" >Infantis</option>
+                        <option value="teen" >Para adolescentes</option>
+                        <option value="adult">Adultos 18+</option>
                     </select>
                 </div>
             </div>
 
             <div class="select_streaming">
                 <label for="streaming">
-                <input type="checkbox" class="streaming" name="streaming_available">
-                <img class="img_netflix" src="{% static 'assets/streaming/icons8-netflix-480.png' %}" alt="Netflix">
-                <input type="checkbox" class="streaming" name="streaming_available">
-                <img class="img_max" src="{% static 'assets/streaming/icons8-hbo-max-480.png' %}" alt="Max">
-                <input type="checkbox" class="streaming" name="streaming_available">
-                <img class="img_disney" src="{% static 'assets/streaming/icons8-disney-480.png' %}" alt="Disney">
-                <input type="checkbox" class="streaming" name="streaming_available">
-                <img class="img_prime" src="{% static 'assets/streaming/icons8-amazon-prime-video-480.png' %}" alt="Prime video">
-                <input type="checkbox" class="streaming" name="streaming_available">
-                <img class="img_appletv" src="{% static 'assets/streaming/icons8-apple-tv-480.png' %}" alt="Apple Tv">
+                    <input type="checkbox" class="streaming" name="streaming_available" value="netflix">
+                    <img class="img_netflix" src="{% static 'assets/streaming/icons8-netflix-480.png' %}" alt="Netflix">
+            
+                    <input type="checkbox" class="streaming" name="streaming_available" value="max">
+                    <img class="img_max" src="{% static 'assets/streaming/icons8-hbo-max-480.png' %}" alt="Max">
+            
+                    <input type="checkbox" class="streaming" name="streaming_available" value="disney">
+                    <img class="img_disney" src="{% static 'assets/streaming/icons8-disney-480.png' %}" alt="Disney">
+            
+                    <input type="checkbox" class="streaming" name="streaming_available" value="prime">
+                    <img class="img_prime" src="{% static 'assets/streaming/icons8-amazon-prime-video-480.png' %}" alt="Prime Video">
+            
+                    <input type="checkbox" class="streaming" name="streaming_available" value="appletv">
+                    <img class="img_appletv" src="{% static 'assets/streaming/icons8-apple-tv-480.png' %}" alt="Apple TV">
                 </label>
             </div>
         </div>
@@ -226,8 +236,10 @@
         <p class="searching_movies">Buscar por um filme ou série</p>
         <hr class="line">
         <input type="text" class="movie_search_engine_by_typing" placeholder="Digite o título">
-        <div><button>Buscar</button></div>
+        <div><button id="search-button">Buscar</button></div>
     </div>
+
+    <div id="search-results"></div>
 
     <script src="{% static 'assets/scripts.js' %}"></script>
 

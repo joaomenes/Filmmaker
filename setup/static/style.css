@@ -255,8 +255,12 @@ header img {
     margin-left: 28px;
 }
 
-.reviews_language_selecting, .age_selecting {
+.reviews_language_selecting {
     margin-left: 67px;
+}
+
+.age_selecting{
+    margin-left: 30px;
 }
 
 .release_year_select {
@@ -274,7 +278,7 @@ header img {
 
 .release_year_initial_select select {
     font-size: 18px;
-    margin-left: 15px;
+    margin-left: 5px;
     font-family: var(--font-primary);
 }
 

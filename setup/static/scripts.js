@@ -1,85 +1,63 @@
-document.querySelectorAll('.films_or_series button').forEach(button => {
-    button.addEventListener('click', function() {
-        
-        button.classList.toggle('selected');
+// botões de filtro por tipo 
+const filterButtons = document.querySelectorAll('.filter-btn');
+const selectedTypes = new Set();
 
-        
-        if (button.textContent === 'Filmes') {
-            document.querySelector('.films_or_series button:nth-child(2)').classList.remove('selected'); 
+// seleção de tipo de conteúdo
+filterButtons.forEach(button => {
+    button.addEventListener('click', function () {
+        const type = this.dataset.type;
+
+        if (selectedTypes.has(type)) {
+            selectedTypes.delete(type);
+            this.classList.remove('selected');
         } else {
-            document.querySelector('.films_or_series button:nth-child(1)').classList.remove('selected');   
+            selectedTypes.add(type);
+            this.classList.add('selected');
         }
     });
 });
 
-document.querySelector('#search-button').addEventListener('click', function() {
-    
-    const yearInitial = document.querySelector('.year_initial').value;
-    const yearEnd = document.querySelector('.year_end').value;
-    const movieLanguageSelecting = document.querySelector('.movie_language_selecting').value;
-    const durationLanguageSelecting= document.querySelector('.duration_language_selecting').value;
-    const reviewsLanguageSelecting = document.querySelector('.reviews_language_selecting').value;
-    const ageSelecting = document.querySelector('.age_selecting').value;
-    const voteMin = document.querySelector('.vote-select').value;
+// backend ao submeter o formulário
+document.getElementById('filter-form').addEventListener('submit', function (event) {
+    event.preventDefault();
 
-   
-    const selectedGenres = [];
-    document.querySelectorAll('.genres-list button.selected').forEach(button => {
-        selectedGenres.push(button.textContent);  
-    });
-
-    
-    let showTypeSelection = '';  
-    const selectedButton = document.querySelector('.films_or_series button.selected');
-    if (selectedButton) {
-        showTypeSelection = selectedButton.textContent === 'Filmes' ? 'movie' : 'series';
-    }
-
-    
-    const filtros = {
-        year_initial: yearInitial,
-        year_end: yearEnd,
-        movie_language_selecting: movieLanguageSelecting,
-        duration_language_selecting: durationLanguageSelecting,
-        release_to: yearTo,
-        genres: selectedGenres.join(','),  //gêneros como uma string separada por vírgulas
-        reviews_language_selecting: reviewsLanguageSelecting,
-        age_selecting: ageSelecting
+    const data = {
+        show_type: Array.from(selectedTypes),  // lista movie', 'series' 
+        services: document.getElementById('service').value,
+        release_from: document.getElementById('release_from').value,
+        release_to: document.getElementById('release_to').value,
+        genres: document.getElementById('genre').value,
+        language: document.getElementById('language').value,
+        vote_min: document.getElementById('vote_min').value
     };
 
-   
-    fetch('/filter/', {
+    fetch('/filter_search/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken')
         },
-        body: JSON.stringify(filtros),
+        body: JSON.stringify(data)
     })
     .then(response => response.json())
-    .then(data => {
-        // Limpa os resultados
-        const resultadosDiv = document.getElementById('resultados');
-        resultadosDiv.innerHTML = '';  // Limpa qualquer resultado anterior
-
-        // verifica se obteve resultado
-        if (data.results && data.results.length > 0) {
-            data.results.forEach(item => {
-                const divItem = document.createElement('div');
-                divItem.classList.add('resultado-item');
-
-                const title = document.createElement('h3');
-                title.textContent = item.title || item.name;  
-
-                divItem.appendChild(title);
-                resultadosDiv.appendChild(divItem);
-            });
-        } else {
-            const mensagem = document.createElement('p');
-            mensagem.textContent = 'Nenhum resultado encontrado para os filtros selecionados.';
-            resultadosDiv.appendChild(mensagem);
-        }
+    .then(result => {
+        console.log('Resultado:', result);
     })
-    .catch(error => {
-        console.error('Erro ao buscar:', error);
-    });
+    .catch(error => console.error('Erro na requisição:', error));
 });
+
+// token CSRF necessário para a requisição POST
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
